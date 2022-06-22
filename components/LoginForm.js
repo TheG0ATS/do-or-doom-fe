@@ -14,9 +14,9 @@ export default function LoginForm({ onLogin }) {
                 <form onSubmit={handleSubmit} >
                     <fieldset autoComplete='off'>
                         <label htmlFor="username">Username</label>
-                        <input name="username" />
+                            <input name="username" />
                         <label  htmlFor="password">Password</label>
-                        <input  type="password" name="password" />
+                            <input  type="password" name="password" />
                         <button >Log In</button>
                     </fieldset>
                 </form>
