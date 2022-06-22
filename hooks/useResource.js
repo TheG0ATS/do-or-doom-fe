@@ -49,10 +49,14 @@ export default function useResource() {
     }
 
     async function updateResource(resource) {
-        // STRETCH
-        // Add ability for user to update an existing resource
+        // Find update resource logic
+    //     try {
+    //         await axios.post(apiUrl, resource, config());
+    //         mutate(); // mutate causes complete collection to be refetched
+    //     } catch (err) {
+    //         handleError(err);
+    // }
     }
-
 
     // helper function to handle getting Authorization headers EXACTLY right
     function config() {
