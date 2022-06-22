@@ -49,13 +49,15 @@ export default function useResource() {
     }
 
     async function updateResource(resource) {
-        // Find update resource logic
-    //     try {
-    //         await axios.post(apiUrl, resource, config());
-    //         mutate(); // mutate causes complete collection to be refetched
-    //     } catch (err) {
-    //         handleError(err);
-    // }
+        // console.log(resource)
+        try {
+            console.log(resource.id)
+            const url = apiUrl + resource.id;
+            await axios.put(url, resource, config());
+            mutate(); // mutate causes complete collection to be refetched
+        } catch (err) {
+            handleError(err);
+        }
     }
 
     // helper function to handle getting Authorization headers EXACTLY right

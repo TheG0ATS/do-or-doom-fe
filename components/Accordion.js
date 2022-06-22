@@ -8,6 +8,8 @@ export default function Accordion(props) {
     setIsShowing(!isShowing);
   };
 
+  
+
   return (
     <div
       style={{
@@ -45,7 +47,8 @@ export default function Accordion(props) {
         style={{ display: isShowing ? "block" : "none", padding: "5px" }}
         dangerouslySetInnerHTML={{__html: props.com}}
       />
-      <DeleteButton deleteStand={props.deleteStand} id={props.id}/>
+      <DoneButton toggleDone={props.updateResource} id={props.id}/>
+      <DeleteButton deleteTask={props.deleteTask} id={props.id}/>
     </div>
   
   );
@@ -54,7 +57,7 @@ export default function Accordion(props) {
 function DeleteButton(props) {
 
   function clickHandler() {
-      props.deleteStand(props.id);
+      props.deleteTask(props.id);
   }
 
   return(
@@ -63,6 +66,21 @@ function DeleteButton(props) {
           <path strokeLinecap="round" strokeLinejoin="round" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
         </svg>
         delete
+    </button>
+  )
+}
+
+function DoneButton(props) {
+
+  function clickHandler() {
+      props.toggleDone(props.id);
+  }
+
+  return(
+    <button onClick={clickHandler}>
+      <svg  className="w-6 h-6 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1}>
+        </svg>
+        DONE
     </button>
   )
 }
