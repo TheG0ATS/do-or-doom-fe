@@ -5,20 +5,16 @@ export default function TaskList({ taskData}) {
     const styles = {
         fontFamily: "Roboto"
       };
-    console.log(taskData)
+
 
     const { deleteResource , updateResource } = useResource();
 
     function handlePut(taskData) {
-        // e.preventDefault();
-        // var taskData = {}
-        // taskData["title"] = taskData.title;
-        // taskData["description"] = taskData.description;
-        // console.log("completed :",taskData.completed)
+        taskData["title"] = taskData.title;
         taskData["completed"] = !taskData.completed;
-        // taskData["due"] = taskData.due;
-        // taskData["owner"] = taskData.id;
-        console.log("inside handle put:" , taskData)
+        taskData["due"] = taskData.due;
+        taskData["owner"] = taskData.owner;
+        taskData["id"] = taskData.id;
         updateResource(taskData);
         // e.target.reset();
     }
@@ -30,7 +26,8 @@ export default function TaskList({ taskData}) {
             return(
             <>
 
-            <Accordion 
+            <Accordion
+            taskData={task} 
             title={task.title} 
             content={task.description}
             due={task.due} 

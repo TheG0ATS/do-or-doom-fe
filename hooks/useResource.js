@@ -28,7 +28,6 @@ export default function useResource() {
     }
 
     async function createResource(info) {
-
         try {
             await axios.post(apiUrl, info, config());
             mutate(); // mutate causes complete collection to be refetched
@@ -49,10 +48,8 @@ export default function useResource() {
     }
 
     async function updateResource(resource) {
-        // console.log(resource)
         try {
-            console.log(resource.id)
-            const url = apiUrl + resource.id;
+            const url = apiUrl + resource.id + '/';
             await axios.put(url, resource, config());
             mutate(); // mutate causes complete collection to be refetched
         } catch (err) {
@@ -71,7 +68,7 @@ export default function useResource() {
     }
 
     function handleError(err) {
-        console.error(err);
+        console.table(err);
         // currently just log out on error
         // but a common error will be short lived token expiring
         // STRETCH: refresh the access token when it has expired

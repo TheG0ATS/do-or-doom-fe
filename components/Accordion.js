@@ -1,7 +1,6 @@
 import { useState } from "react";
 
 export default function Accordion(props) {
-    console.log("this is props:", props)
   const [isShowing, setIsShowing] = useState(false);
 
   const toggle = () => {
@@ -47,7 +46,7 @@ export default function Accordion(props) {
         style={{ display: isShowing ? "block" : "none", padding: "5px" }}
         dangerouslySetInnerHTML={{__html: props.com}}
       />
-      <DoneButton toggleDone={props.updateResource} id={props.id}/>
+      <DoneButton toggleDone={props.updateResource} taskData={props.taskData}/>
       <DeleteButton deleteTask={props.deleteTask} id={props.id}/>
     </div>
   
@@ -73,7 +72,7 @@ function DeleteButton(props) {
 function DoneButton(props) {
 
   function clickHandler() {
-      props.toggleDone(props.id);
+      props.toggleDone(props.taskData);
   }
 
   return(
