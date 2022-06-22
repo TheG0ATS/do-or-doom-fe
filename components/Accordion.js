@@ -79,7 +79,7 @@ function DoneButton(props) {
     <button onClick={clickHandler}>
       <svg  className="w-6 h-6 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1}>
         </svg>
-        DONE
+        {props.taskData.completed ? 'Mark Incomplete' : 'Mark Complete'}
     </button>
   )
 }
