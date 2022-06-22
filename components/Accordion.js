@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 export default function Accordion(props) {
+    console.log("this is props:", props)
   const [isShowing, setIsShowing] = useState(false);
 
   const toggle = () => {
@@ -34,10 +35,17 @@ export default function Accordion(props) {
       </button>
       <div
         style={{ display: isShowing ? "block" : "none", padding: "5px" }}
-        dangerouslySetInnerHTML={{
-          __html: props.content
-        }}
+        dangerouslySetInnerHTML={{__html: props.content}}
+      />
+      <div
+        style={{ display: isShowing ? "block" : "none", padding: "5px" }}
+        dangerouslySetInnerHTML={{__html: props.due}}
+      />
+       <div
+        style={{ display: isShowing ? "block" : "none", padding: "5px" }}
+        dangerouslySetInnerHTML={{__html: props.com}}
       />
     </div>
+  
   );
 }
