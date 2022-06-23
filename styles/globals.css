@@ -1,6 +1,5 @@
 html,body {
-  background-image: url(../public/bkg1.jpg);
-  background-repeat:   no-repeat;
+  background: linear-gradient(345deg, rgba(0,0,0,1) 0%, rgba(221,57,57,1) 35%, rgba(213,182,53,1) 100%);  background-repeat:   no-repeat;
   background-position: top;
   background-attachment: fixed;
   background-size: cover;
