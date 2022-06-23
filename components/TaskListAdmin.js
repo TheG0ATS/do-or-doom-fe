@@ -17,8 +17,7 @@ export default function TaskListAdmin() {
 
   return (<>
     <Header />
-    <h1>Task List</h1>
-    <main className={styles}>
+    <main className={styles.maincolumn}>
       <NewTaskForm onCreate={storeCreationHandler}/>
       <TaskList taskData={resources || []} deleteTask={deleteResource} />
     </main>
