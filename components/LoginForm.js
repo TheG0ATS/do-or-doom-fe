@@ -10,7 +10,7 @@ export default function LoginForm({ onLogin, bg }) {
 
   
     return (
-        <div className={styles.header}>
+        <div className={styles.landing}>
             <img src={"https://github.com/TheG0ATS/Project-Prep/raw/main/docs/cutedoom.png"} />
             <div>
                 <form onSubmit={handleSubmit} >
