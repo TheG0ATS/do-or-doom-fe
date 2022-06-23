@@ -33,7 +33,7 @@ export default function Accordion(props) {
         onClick={toggle}
         type="button"
       >
-        <p>{props.title}</p>
+        <h2>{props.title}</h2>
       </button>
       <div
         style={{ display: isShowing ? "block" : "none", padding: "5px" }}
@@ -43,10 +43,7 @@ export default function Accordion(props) {
         style={{ display: isShowing ? "block" : "none", padding: "5px" }}
         dangerouslySetInnerHTML={{__html: props.due}}
       />
-       <div
-        style={{ display: isShowing ? "block" : "none", padding: "5px" }}
-        dangerouslySetInnerHTML={{__html: props.com}}
-      />
+       
       <DoneButton toggleDone={props.updateResource} taskData={props.taskData}/>
       <DeleteButton deleteTask={props.deleteTask} id={props.id}/>
     </div>
