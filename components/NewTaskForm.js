@@ -12,12 +12,11 @@ export default function NewTaskForm({ onCreate }) {
         var taskData = {}
         taskData["title"] = e.target.title.value;
         taskData["description"] = e.target.description.value;
-        taskData["completed"] = e.target.completed.value;
+        taskData["completed"] = false;
         taskData["due"] = e.target.due.value;
         taskData["owner"] = user.id;
-        createResource(locationData);
+        createResource(taskData);
         e.target.reset();
-
     }
 
     return <div className='justify-center w-5/6'>
@@ -35,12 +34,8 @@ export default function NewTaskForm({ onCreate }) {
                         <input name='description' placeholder='Describe your task' />
                     </div>
                     <div className='flex flex-col font-bold bg-[rgb(168,244,208)] px-20 rounded'>
-                        <label>MAXIMUM CUSTOMERS PER HOUR</label>
-                        <input name='maxCust' placeholder='0'/>
-                    </div>
-                    <div className='flex flex-col font-bold bg-[rgb(168,244,208)] px-20 rounded'>
                         <label>DUE DATE</label>
-                        <input name='due' placeholder='0' />
+                        <input name='due' placeholder='yyyy-mm-dd' />
                     </div>
                 </div>
 
