@@ -5,9 +5,7 @@ export default function Header() {
     return <header className={styles.header}>
         <div></div>
         <nav>
-            <img src={"https://raw.githubusercontent.com/TheG0ATS/Project-Prep/main/docs/doom.png"} />
+            <img src="https://raw.githubusercontent.com/TheG0ATS/Project-Prep/main/docs/doom.png"/>
         </nav>
-        
-        
     </header>
   }

@@ -1,11 +1,12 @@
-
 import useResource from '../hooks/useResource';
 import Accordion from "../components/Accordion";
-export default function TaskList({ taskData }) {
-    const styles = {
-        fontFamily: "Roboto"
-      };
+import styles from '../styles/Home.module.scss'
 
+
+export default function TaskList({ taskData }) {
+    // const styles = {
+    //     fontFamily: "Roboto"
+    //   };
 
     const { deleteResource , updateResource } = useResource();
 
@@ -23,28 +24,8 @@ export default function TaskList({ taskData }) {
     let isCompleted = taskData.filter(item => (item.completed == true));
     return (
         <>
-        <div style={styles}>
-        {isCompleted.map((task, idx) => {
-            return(
-                
-                <>
-                <Accordion
-                taskData={task} 
-                title={task.title} 
-                content={task.description}
-                due={task.due} 
-                com={task.completed}
-                key={idx} 
-                deleteTask={deleteResource} 
-                updateResource={handlePut}
-            // handlePut={handlePut}
-                id={task.id}
-                />
-                </>
-            )
-        })}
-        </div>
-        <div style={styles}>
+        <div className={styles.tasklist}>
+        <h1 className={styles.listheader}>Pending Tasks</h1>
         {notCompleted.map((task, idx) => {
             return(
                 
@@ -65,6 +46,30 @@ export default function TaskList({ taskData }) {
             )
         })}
         </div>
+
+        <div className={styles.tasklist}>
+        <h1 className={styles.listheader}>Done Tasks</h1>
+        {isCompleted.map((task, idx) => {
+            return(
+                
+                <>
+                <Accordion
+                taskData={task} 
+                title={task.title} 
+                content={task.description}
+                due={task.due} 
+                com={task.completed}
+                key={idx} 
+                deleteTask={deleteResource} 
+                updateResource={handlePut}
+            // handlePut={handlePut}
+                id={task.id}
+                />
+                </>
+            )
+        })}
+        </div>
+
         </>
     )
 

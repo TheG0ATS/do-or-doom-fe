@@ -8,15 +8,14 @@ export default function Accordion(props) {
     setIsShowing(!isShowing);
   };
 
-  
-
   return (
     <div
+      className={styles.accordion}
       style={{
         width: "100%",
         marginBottom: "15px",
         lineHeight: "15px",
-        border: "1px solid rgba(209, 213, 219, 0.5)"
+        border: "1px solid white"
       }}
     >
       <button
@@ -35,29 +34,31 @@ export default function Accordion(props) {
       >
         <h2>{props.title}</h2>
       </button>
-      <div
-        style={{ display: isShowing ? "block" : "none", padding: "5px" }}
-        dangerouslySetInnerHTML={{__html: props.content}}
-      />
-      <div
-        style={{ display: isShowing ? "block" : "none", padding: "5px" }}
-        dangerouslySetInnerHTML={{__html: props.due}}
-      />
-       
-      <DoneButton toggleDone={props.updateResource} taskData={props.taskData}/>
-      <DeleteButton deleteTask={props.deleteTask} id={props.id}/>
+
+      <div style={{ display: isShowing ? "block" : "none", padding: "5px" }} className={styles.taskdetails}>
+        <p>Details:</p>
+        <div dangerouslySetInnerHTML={{ __html: props.content }} />
+      </div>
+      <div style={{ display: isShowing ? "block" : "none", padding: "5px" }} className={styles.taskdetails}>
+        <p>Due by:</p>
+        <div dangerouslySetInnerHTML={{ __html: props.due }} />
+      </div>
+
+      <div className={styles.taskcontrols}>
+        <DoneButton toggleDone={props.updateResource} taskData={props.taskData} />
+        <DeleteButton deleteTask={props.deleteTask} id={props.id} />
+      </div>
     </div>
-  
   );
 }
 
 function DeleteButton(props) {
 
   function clickHandler() {
-      props.deleteTask(props.id);
+    props.deleteTask(props.id);
   }
 
-  return(
+  return (
     <button onClick={clickHandler} className={styles.del}>
       {/* 
       <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1}>
@@ -70,33 +71,24 @@ function DeleteButton(props) {
 }
 
 function DoneButton(props) {
-
   function clickHandler() {
-      props.toggleDone(props.taskData);
+    props.toggleDone(props.taskData);
   }
-
   function uncheckedBox() {
     return (
-      <label>
-      Task Complete
-      <input checked={false} type='checkbox' onChange={clickHandler}/>
+      <label className={styles.checkbox}>
+        <input checked={false} type='checkbox' onChange={clickHandler} />
       </label>
     )
   }
-
   function checkedBox() {
     return (
-      <label>
-      Task Complete
-      <input checked={true} type='checkbox' onChange={clickHandler}/>
+      <label className={styles.checkbox}>
+        <input checked={true} type='checkbox' onChange={clickHandler} />
       </label>
     )
   }
-
-
-  return(
-
+  return (
     props.taskData.completed ? checkedBox() : uncheckedBox()
-
   )
 }
