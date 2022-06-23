@@ -78,11 +78,28 @@ function DoneButton(props) {
       props.toggleDone(props.taskData);
   }
 
+  function uncheckedBox() {
+    return (
+      <label>
+      Task Complete
+      <input checked={false} type='checkbox' onChange={clickHandler}/>
+      </label>
+    )
+  }
+
+  function checkedBox() {
+    return (
+      <label>
+      Task Complete
+      <input checked={true} type='checkbox' onChange={clickHandler}/>
+      </label>
+    )
+  }
+
+
   return(
-    <button onClick={clickHandler}>
-      <svg  className="w-6 h-6 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1}>
-        </svg>
-        {props.taskData.completed ? 'Mark Incomplete' : 'Mark Complete'}
-    </button>
+
+    props.taskData.completed ? checkedBox() : uncheckedBox()
+
   )
 }

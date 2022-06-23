@@ -9,7 +9,6 @@ import useResource from '../hooks/useResource'
 export default function TaskListAdmin() {
   const [taskData, settaskData] = useState([]);
   const { resources, deleteResource } = useResource();
-
   function storeCreationHandler(newtaskData) {
 
     settaskData([...taskData, newtaskData]);
@@ -21,7 +20,7 @@ export default function TaskListAdmin() {
       <NewTaskForm onCreate={storeCreationHandler}/>
       <TaskList taskData={resources || []} deleteTask={deleteResource} />
     </main>
-    <Footer count={resources && resources.length}/>
+    <Footer taskData={resources || []}/>
 
   </>)
 
