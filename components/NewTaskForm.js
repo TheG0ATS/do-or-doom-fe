@@ -35,7 +35,7 @@ export default function NewTaskForm({ onCreate }) {
                     </div>
                     <div className='flex flex-col font-bold bg-[rgb(168,244,208)] px-20 rounded'>
                         <label>DUE DATE</label>
-                        <input name='due' placeholder='2222-05-30' />
+                        <input name='due' placeholder='yyyy-mm-dd' />
                     </div>
                 </div>
 
