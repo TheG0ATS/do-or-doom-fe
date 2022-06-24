@@ -25,7 +25,7 @@ export default function TaskList({ taskData }) {
     return (
         <>
         <div className={styles.tasklist}>
-        <h1 className={styles.listheader}>Pending Tasks</h1>
+        <h1 className={styles.listheader}>Pending Tasks ({notCompleted.length})</h1>
         {notCompleted.map((task, idx) => {
             return(
                 
@@ -48,7 +48,7 @@ export default function TaskList({ taskData }) {
         </div>
 
         <div className={styles.tasklist}>
-        <h1 className={styles.listheader}>Done Tasks</h1>
+        <h1 className={styles.listheader}>Done Tasks ({isCompleted.length})</h1>
         {isCompleted.map((task, idx) => {
             return(
                 
