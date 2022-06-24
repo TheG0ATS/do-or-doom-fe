@@ -1,5 +1,8 @@
 html,body {
-  background: linear-gradient(345deg, rgba(0,0,0,1) 0%, rgba(221,57,57,1) 35%, rgba(213,182,53,1) 100%);  background-repeat:   no-repeat;
+  /* background: linear-gradient(345deg, rgba(0,0,0,1) 0%, rgba(221,57,57,1) 35%, rgba(213,182,53,1) 100%);   */
+  background: linear-gradient(345deg, rgba(0,0,0,1) 0%, rgb(53, 42, 42) 35%, rgb(63, 62, 56) 100%);  
+
+  background-repeat:   repeat;
   background-position: top;
   background-attachment: fixed;
   background-size: cover;
