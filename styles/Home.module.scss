@@ -2,11 +2,14 @@ $blackr: #000000db;
 $white: rgba(255,255,255,0.3);
 $orange: #FF6400 33%;
 
+@import url('https://fonts.googleapis.com/css2?family=Aclonica&display=swap');
 
 .cover {
-  height: 100vh;}
+  height: 100%;
+}
 
 .landing {
+  height: 100%;
   padding: 4rem 0;
   img {
   display: block;
@@ -15,18 +18,18 @@ $orange: #FF6400 33%;
   }
 
   div {
-    min-height:350px;
-    max-width:250px;
+    min-height:450px;
+    max-width:350px;
     margin: 5rem auto;
-    background:linear-gradient(to left, #965dffba, #6fabff);
-    backdrop-filter: blur(6px);
-    border-radius:2px;
-    box-shadow:0px 2px 3px rgba(0, 0, 0, 0.05);
+    // background:linear-gradient(to left, #965dffba, #6fabff);
+    backdrop-filter: blur(10px);
+    border-radius:10px;
+    border: 1px solid white;
+    box-shadow:0px 0px 10px rgba(30, 0, 65, 0.521);
     display:flex;
     flex-direction:column;
-    filter: drop-shadow(5px 5px 4px #4444dd8e);
-    font-family: "Times New Roman", Times, serif;
-    font-size: large;
+    // filter: drop-shadow(5px 5px 4px #4444dd8e);
+    font-size: larger;
     
     form {
       flex: 1;
@@ -39,20 +42,26 @@ $orange: #FF6400 33%;
         flex-direction: column;
         justify-content: space-between;
         border-color: rgba(255, 127, 80, 0);
-        
+        width: 100%;
+        color: green;
         label{
           margin: .5rem 0rem;
-          color: rgb(63, 63, 63);
+          padding: .2rem;
+          color: rgb(240, 137, 137);
+          font-family: sans-serif;
         }
-
+        input{
+          padding: 1rem;
+        }
         button{
           cursor: pointer;
           margin-top: 1rem;
           padding: 0.6em 2em;
           border: none;
           outline: none;
-          color: rgb(255, 255, 255);
-          background: rgb(0, 0, 0);
+          color: rgb(51, 51, 51);
+          font-size: large;
+          background: rgba(255, 255, 255, 0.788);
           cursor: pointer;
           position: relative;
           z-index: 0;
@@ -105,7 +114,7 @@ $orange: #FF6400 33%;
           position: absolute;
           width: 100%;
           height: 100%;
-          background: #222;
+          background: rgba(255, 255, 255, 0.788);
           left: 0;
           top: 0;
           border-radius: 10px;
@@ -113,8 +122,6 @@ $orange: #FF6400 33%;
       }
     }
   }
-
-  button {}
 }
 
 .header {
@@ -178,6 +185,7 @@ $orange: #FF6400 33%;
 
 .tasklist{
   background: rgba(0, 0, 0, 0.596);
+  border: 1px solid rgba(255, 0, 0, 0.432);
   border-radius: .3rem;
   width: 30%;
   margin: 1%;
@@ -186,18 +194,22 @@ $orange: #FF6400 33%;
 }
 
 .listheader{
+  font-family: 'Aclonica', sans-serif;
+  font-variant: small-caps;
   text-align: center;
-  color: rgb(91, 163, 151);
+  color: rgb(255, 166, 0);
+  text-shadow: 0px 0px 5px rgba(255, 166, 0, 0.788);
   padding: 0px;
   margin: 0px;
   margin-bottom: 3%;
-  font-size: 5vh;
+  font-size: 3vh;
 }
 
 .accordion{
   background: rgba(0, 0, 0, 0.596);
   border-radius: .3rem;
-  color: yellow;
+  border-color: rgba(255, 127, 80, 0);
+  color: rgb(247, 247, 247);
 
   h2{
     font-weight: lighter;
@@ -208,6 +220,15 @@ $orange: #FF6400 33%;
     width: 100%;
     color: rgb(231, 226, 157);
     background-color: rgb(94, 14, 14);
+  }
+
+  .donebox{
+    color: rgba(255, 166, 0, 0.884);
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid rgb(112, 0, 0);
+    background-color: rgba(112, 0, 0, 0.329);
+    box-shadow: 0px 0px 5px rgba(255, 0, 0, 0.37);
   }
 }
 
@@ -224,9 +245,9 @@ $orange: #FF6400 33%;
 .taskdetails{
   padding: 5px;
   margin: 1%;
-  border: 1px solid red;
+  // border: 1px solid red;
   p{
-    color: gray;
+    color: rgb(255, 217, 1);
   }
 }
 
@@ -240,6 +261,7 @@ $orange: #FF6400 33%;
   height: 3rem;
   border-radius: .3rem;
   transition: 0.5s;
+  box-shadow: 0px 0px 5px red;
 }
 
 .del:hover{
@@ -261,7 +283,6 @@ $orange: #FF6400 33%;
 .newtaskform{
   background: rgba(0, 0, 0, 0.596);
   border-radius: .3rem;
-
   width: min-content;
   height: min-content;
   margin: 1%;
@@ -269,14 +290,19 @@ $orange: #FF6400 33%;
   display: flex;
   flex-direction: column;
   text-align: center;
-
+  border: 1px solid rgba(255, 0, 0, 0.432);
+  border-radius: .3rem;
   h2{
     margin: 0px;
     padding: 0px;
-    text-align: center;
+    white-space: nowrap;
     display: block;
-    color: rgb(91, 163, 151);
-    font-size: 4vh;
+    font-size: 3vh;
+    font-family: 'Aclonica', sans-serif;
+    font-variant: small-caps;
+    text-align: center;
+    color: rgb(255, 166, 0);
+    text-shadow: 0px 0px 5px rgba(255, 166, 0, 0.788);
   }
 
   button{
@@ -290,6 +316,7 @@ $orange: #FF6400 33%;
     height: 3rem;
     border-radius: .3rem;
     transition: 0.3s;
+    box-shadow: 0px 0px 5px red;
   }
   button:hover{
     filter: drop-shadow(0px 0px 10px #ff0000) contrast(200%);
@@ -297,6 +324,16 @@ $orange: #FF6400 33%;
   button:active{
     width: 7rem;
     height: 4rem;
+  }
+  label{
+    padding: 5px;
+  }
+  input{
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: black;
+    color: white;
   }
 }
 
