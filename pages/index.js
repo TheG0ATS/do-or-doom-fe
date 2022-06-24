@@ -1,4 +1,3 @@
-
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.scss'
@@ -22,8 +21,7 @@ export default function Home() {
     <div className={styles.cover}
     style={{ 
       backgroundImage: `url("${bg}")` 
-    }}
-    >
+    }}>
       <Head>
         <title>Do or DOOM</title>
       </Head>
@@ -32,7 +30,6 @@ export default function Home() {
         :
         <LoginForm onLogin={login} bg={changeStyle}/>
       }
-
     </div>
   )
 }
