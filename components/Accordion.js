@@ -7,7 +7,9 @@ export default function Accordion(props) {
   const toggle = () => {
     setIsShowing(!isShowing);
   };
-
+  var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', minute: "2-digit", second:"2-digit"};
+  var dueDate = new Date(props.due);
+  var dateString = dueDate.toLocaleDateString("en-US", options);
   return (
     <div
       className={styles.accordion}
@@ -15,7 +17,6 @@ export default function Accordion(props) {
         width: "100%",
         marginBottom: "15px",
         lineHeight: "15px",
-        border: "1px solid white"
       }}
     >
       <button
@@ -41,11 +42,14 @@ export default function Accordion(props) {
       </div>
       <div style={{ display: isShowing ? "block" : "none", padding: "5px" }} className={styles.taskdetails}>
         <p>Due by:</p>
-        <div dangerouslySetInnerHTML={{ __html: props.due }} />
+        <div dangerouslySetInnerHTML={{ __html: dateString }} />
       </div>
 
       <div className={styles.taskcontrols}>
+        <div className={styles.donebox}>
+        Done: 
         <DoneButton toggleDone={props.updateResource} taskData={props.taskData} />
+        </div>
         <DeleteButton deleteTask={props.deleteTask} id={props.id} />
       </div>
     </div>
